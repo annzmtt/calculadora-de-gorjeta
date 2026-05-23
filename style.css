@@ -32,8 +32,15 @@ header {
 main {
     background-color: var(--white);
     padding: 2rem;
-
+    border-radius: 1.5625rem 
 }
+
+.conta,
+.gorjeta,
+.pessoas {
+    margin-bottom: 2rem;
+}
+
 
 .conta label,
 .gorjeta label,
@@ -114,4 +121,10 @@ pessoas input{
 
 .pessoas #erro {
     display: none;
+}
+
+.resultados {
+    background-color: var(--green-800);
+    border-radius: 0.9375rem;
+    padding: 1.5rem;
 }
