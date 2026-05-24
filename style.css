@@ -16,6 +16,8 @@
     --green-800: #00474b;
     --light-green: #26c2ae;
     --white: #ffffff;
+    --green-hover: #9fe8df;
+    --danger: #e17457;
 }
 
 body {
@@ -50,7 +52,7 @@ main {
 }
 
 .conta div,
-.pessoas div {
+.pessoas .input-box{
     margin-top: 0.4rem;
     background-color: var(--green-100);
     padding: 0.4rem 1.2rem;
@@ -62,7 +64,7 @@ main {
 }
 
 .conta input,
-pessoas input{
+.pessoas input{
     border: none;
     text-align: right;
     width: 100%;
@@ -79,9 +81,14 @@ pessoas input{
 
 }
 
-.conta:has(input:focus) div
-.pessoas {
+.conta:has(input:focus) div,
+.conta.conta:has(input:focus) div,
+.pessoas.conta:has(input:focus) .input-box,
+.pessoas:has(input:focus) .input-box,
+.gorjeta #outra:focus 
+.gorjeta #outra:hover {
     outline: 2px solid var(--light-green);
+    cursor: pointer;
 }
 
 
@@ -107,6 +114,12 @@ pessoas input{
     color: var(--white);
 }
 
+.gorjeta input [type="button"]:hover,
+.resultados button:hover {
+    background-color: var(--green-hover);
+    cursor: pointer;
+}
+
 .gorjeta #outra {
     width: 100%;
     background-color: var(--green-100);
@@ -119,8 +132,20 @@ pessoas input{
     color: var(--green-300);
 }
 
+.pessoas .textos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pessoas .erro-div {
+    outline: 2px solid var(--danger);
+}
+
 .pessoas #erro {
-    display: none;
+    font-size: 0.75rem;
+    color: var(--danger);
+    font-weight: 700;
 }
 
 .resultados {
@@ -170,7 +195,13 @@ pessoas input{
     padding-block: 0.5rem;
 }
 
-@media(min-width 920px) {
+.conta input::-webkit-inner-spin-button, 
+.pessoas input::-webkit-inner-spin-button
+.gorjeta #outra::-webkit-inner-spin-button {
+        display: none;
+    }
+
+@media(min-width: 920px) {
 
     body {
         display: flex;
@@ -198,13 +229,21 @@ pessoas input{
     width: 100%;
     }
 
-    .conta input::/::-webkit-inner-spin-button, 
-    .pessoas input::-webkit-inner-spin-button{
-        display: none;
-    }
-
     .gorjeta div {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .resultados {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 2.5rem;
+
+    }
+
+    .resultaods div > strong {
+        font-size: 3rem;
     }
 }
 
