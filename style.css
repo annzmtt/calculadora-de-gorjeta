@@ -114,6 +114,11 @@ main {
     color: var(--white);
 }
 
+.gorjeta .botao-ativo {
+    background-color: var(--light-green);
+    color: var(--green-800);
+}
+
 .gorjeta input [type="button"]:hover,
 .resultados button:hover {
     background-color: var(--green-hover);
@@ -138,7 +143,7 @@ main {
     justify-content: space-between;
 }
 
-.pessoas .erro-div {
+.pessoas #erro-div {
     outline: 2px solid var(--danger);
 }
 
@@ -146,6 +151,7 @@ main {
     font-size: 0.75rem;
     color: var(--danger);
     font-weight: 700;
+    display: none;
 }
 
 .resultados {
