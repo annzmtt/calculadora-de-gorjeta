@@ -137,119 +137,220 @@ main {
     color: var(--green-300);
 }
 
-.pessoas .textos {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --jagged-ice: #C5E4E7;
+    --white: #FFF;
+    --greyish-turquoise: #5E7A7D;
+    --squeze: #F3F9FA;
+    --sherpa-blue: #00474B;
+    --topaz: #26C2AE;
+    --beetle-green: #547878;
+    --regent-grey: #7F9D9F;
+    --water-leaf: #9FE8DF;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--jagged-ice);
+}
+
+header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
+    padding-top: 5rem;
+    padding-bottom: 4rem;
 }
 
-.pessoas #erro-div {
-    outline: 2px solid var(--danger);
+main {
+    background: var(--white);
+    padding: 3.2rem 2.4rem;
+    border-radius: 2.5rem 2.5rem 0 0;
 }
 
-.pessoas #erro {
-    font-size: 0.75rem;
-    color: var(--danger);
-    font-weight: 700;
-    display: none;
+.info {
+    margin-inline: .8rem;
+    
+    div {
+        margin-bottom: 3.2rem;
+    }
+
+    strong {
+        color: var(--greyish-turquoise);
+    }
+
+    .input-box {
+        margin-top: .6rem;
+        background: var(--squeze);
+        padding: .6rem 1.8rem;
+        display: flex;
+        align-items: center;
+        border-radius: .5rem;
+    
+       input {
+           border: none;
+           background: transparent;
+           text-align: right;
+           width: 100%;
+           outline: none;
+           font-size: 2.4rem;
+           font-weight: 700;
+           color: var(--sherpa-blue);
+    
+           &::placeholder{
+            color: var(--sherpa-blue);
+             opacity: 0.35;
+           }
+       }
+    }
+    
+    .input-box:has(input:focus){
+        outline: 2px solid var(--topaz);
+    }
+
+     .tip{
+        div{
+            margin-top: 1.6rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.6rem;
+
+            button {
+               font-size: 2.4rem;
+               color: var(--white);
+               background: var(--sherpa-blue);
+               border: none;
+               padding-block: .6rem;
+               font-weight: 700;
+               border-radius: .5rem;
+            }
+
+            .button-selected {
+                background: var(--topaz);
+            }
+
+            input {
+               width: 100%;
+               border: none;
+               background: var(--squeze);
+               border-radius: .5rem;
+               font-size: 2.4rem;
+               font-weight: 700;
+               text-align: center;
+               color: var(--sherpa-blue);
+
+               &::placeholder {
+                color: var(--beetle-green);
+               }
+
+               &:focus {
+                outline: 2px solid var(--topaz);
+               }
+            }
+        }
+     }
 }
 
-.resultados {
-    background-color: var(--green-800);
-    border-radius: 0.9375rem;
-    padding: 1.5rem;
+.results {
+    background: var(--sherpa-blue);
+    border-radius: 1.5rem;
+    padding: 4rem 2.4rem 2.4rem;
+
+    .amount,
+    .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+
+        p {
+            color: var(--white);
+            font-weight: 700;
+
+            span {
+                color: var(--regent-grey);
+                font-size: 1.3rem;
+            }
+        }
+
+        strong {
+            font-size: 3.2rem;
+            color: var(--topaz);
+        }
+    }
+
+    button {
+        background: var(--topaz);
+        color: var(--sherpa-blue);
+        font-size: 2rem;
+        text-transform: uppercase;
+        width: 100%;
+        border: none;
+        border-radius: .5rem;
+        font-weight: 700;
+        padding-block: .9rem;
+    }
 }
 
-.resultados div div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.resultados p{
-    color: var(--green-400);
-    font-size: 0.8125rem;
-}
-
-.resultados p strong {
-    color: var(--white);
-    font-size: 1rem;
-}
-
-.resultaods div > strong {
-    color: var(ligth-green);
-    font-size: 2rem;
-}
-
-.resultados .gorjeta-total {
-    margin-bottom: 1.25rem;
-}
-
-.resultados .total {
-    margin-bottom: 2rem;
-}
-
-.resultados button {
-    width: 100%;
-    background-color: var(--light-green);
-    border: none;
-    border-radius: 0.3125rem;
-    color: var(--green-800);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.25rem;
-    padding-block: 0.5rem;
-}
-
-.conta input::-webkit-inner-spin-button, 
-.pessoas input::-webkit-inner-spin-button
-.gorjeta #outra::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
         display: none;
     }
 
-@media(min-width: 920px) {
-
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100svh;
-        justify-content: center;
-        gap: 5rem;
-    }
-
-    header {
-        padding: 0;
-    }
-
-
+@media(min-width: 920px){
     main {
         display: flex;
-        gap: 3rem;
-        padding:3rem;
-        border-radius: 1.5625rem;
-        max-width: 57.5rem;
+        max-width: 92rem;
         margin-inline: auto;
+        border-radius: 2.5rem;
+        gap: 4.8rem;
+        padding: 4.8rem;
     }
 
-    main section {
-    width: 100%;
+    section {
+        width: 100%;
+    }
+  
+    .info{
+    .tip{
+        div {
+            grid-template-columns: repeat(3, 1fr);
+
+            button:hover{
+                background: var(--water-leaf);
+                cursor: pointer;
+                transition: .3s;
+            }
+        }
+    }
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5.6rem 4rem 4rem;
+
+    .amount,
+    .total {
+        strong {
+            font-size: 4.8rem;
+        }
     }
 
-    .gorjeta div {
-        grid-template-columns: 1fr 1fr 1fr;
+    button:hover {
+        background: var(--water-leaf);
+        transition: .3s;
+        cursor: pointer;
     }
-
-    .resultados {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        padding: 2.5rem;
-
-    }
-
-    .resultaods div > strong {
-        font-size: 3rem;
-    }
+  }
 }
-
